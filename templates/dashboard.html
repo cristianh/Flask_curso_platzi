@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {% if role == "admin" %}
+        Dashboard - {{role}}
+        {% else %}
+        Dashboard
+        {% endif %}
+    </title>
+</head>
+<body>
+{% if role == "admin" %}
+<h1>Bienvenido - {{role}}</h1>
+{% else %}
+<h1>Bienvenido, invitado</h1>
+{% endif %}
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Materia</th>
+        <th>Nota</th>
+        <th colspan="2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for usuario in usuarios %}
+    <tr>
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.materia}}</td>
+        <td>{{usuario.nota}}</td>
+        <td><a href="{{ url_for('delete_user',id=usuario.id)}}">
+            <button>ELIMINAR</button>
+        </a></td>
+        <td><a href="{{ url_for('udpdate_user',id=usuario.id)}}">
+            <button>EDITAR</button>
+        </a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{{ mensaje }}
+{% if mensaje %}
+    <p>{{mensaje}}</p>
+{% endif %}
+<br>
+<button><a href="{{ url_for('register') }}">Registrar Nueva Nota</a></button>
+</body>
+</html>
