@@ -113,7 +113,7 @@ def udpdate_user(id):
     return render_template("updatenotas.html",user=user)
 
 
-@app.route('/users/<int:id>',methods=["GET","DELETE"])
+@app.route('/users/<int:id>',methods=["POST","DELETE"])
 def delete_user(id):
     user = User.query.get_or_404(id)
     db.session.delete(user)
