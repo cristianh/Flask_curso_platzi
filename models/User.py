@@ -9,5 +9,5 @@ class User(db.Model):
     nota = db.Column(db.Integer, nullable=False)
 
 
-    def to_dict(self):
+    def __repr__(self):
         return {"id": self.id, "nombre": self.nombre, "materia": self.materia, "nota": self.nota}

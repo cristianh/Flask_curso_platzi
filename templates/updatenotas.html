@@ -1,21 +1,20 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registro de notas</title>
-</head>
-<body>
-<h1>Registrar Nota</h1>
-<hr>
-<form method="POST">
-    <label for="user_name">Nombre</label>
-    <input type="text" name="nombre" id="user_name" value="{{user.nombre}}"><br><br>
-    <label for="user_class">Materia</label>
-    <input type="text" name="materia" id="user_class" value="{{user.materia}}"><br><br>
-    <label for="user_note">Nota</label>
-    <input type="text" name="nota" id="user_note" value="{{user.nota}}"><br><br>
-    <button type="submit">ACTUALIZAR</button>
-</form>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+Actualizando: {{user.nombre}}
+{% endblock  %}
+{% block content %}
+
+<div class="container">
+    <h1>Actualizar registro</h1>
+    <hr>
+    <form method="POST">
+        <label class="form-label" for="user_name">Nombre</label>
+        <input type="text" class="form-control" name="nombre" id="user_name" value="{{user.nombre}}"><br><br>
+        <label class="form-label" for="user_class">Materia</label>
+        <input type="text" class="form-control" name="materia" id="user_class" value="{{user.materia}}"><br><br>
+        <label class="form-label" for="user_note">Nota</label>
+        <input type="text" class="form-control" name="nota" id="user_note" value="{{user.nota}}"><br><br>
+        <button class="btn btn-primary" type="submit">ACTUALIZAR</button>
+    </form>
+</div>
+{% endblock %}

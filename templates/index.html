@@ -1,12 +1,8 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Flask python</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Hola, {{name.nombre}} tu nota es {{name.nota}}</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+Usuario: {{name.nombre}}
+{% endblock  %}
+{% block content %}
+<h1>Hola, {{name.nombre}}</h1>
+<p>tu nota es {{name.nota}}</p>
+{% endblock  %}
