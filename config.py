@@ -10,4 +10,4 @@ class Config:
     # Configuración de SQLite
     SQLALCHEMY_DATABASE_URI = f'sqlite:///{DB_FILE_PATH}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = "this-is-not-secret"
+    SECRET_KEY = open("secret_key.txt").read().strip()

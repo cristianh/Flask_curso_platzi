@@ -5,7 +5,7 @@ from flask import (
 
 from routes.users import users_bp
 from routes.register import register_bp
-from routes.login import login_bp
+from auth.auth import login_bp
 from routes.dashboard import dashboard_bp
 
 from models.User import User, db

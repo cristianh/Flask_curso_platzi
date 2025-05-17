@@ -55,15 +55,6 @@ Dashboard
         {% endif %}
         </tbody>
     </table>
-    {% with messages = get_flashed_messages(with_categories = true) %}
-    {% if messages %}
-    {% for category, menssage in messages %}
-        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
-            {{ menssage }}
-        </div>
-    {% endfor %}
-    {% endif %}
-    {% endwith %}
         <a class="text-light" href="{{ url_for('register_user.register') }}">
              <button class="btn btn-primary">Registrar Nueva Nota</button>
         </a>
